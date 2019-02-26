@@ -1,0 +1,4 @@
+<form action='.' method='POST'> {% csrf_token %}
+        <h1>do you want to delete  "{{ weather.name }}"?</h1>
+        <p><input type='submit' value='Yes' /> <a href='../'>Cancel</a></p>
+    </form>

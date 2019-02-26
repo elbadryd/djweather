@@ -43,7 +43,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-offset-4 is-4">
-                    {% for weather in weather_data %}
+                    {% for weather in weather_data reversed %}
                     <div class="box">
                         <article class="media">
                             <div class="media-left">
@@ -54,18 +54,13 @@
                             <div class="media-content">
                                 <div class="content">
                                     <p>
-                                        <span class="title">{{ weather.city.name }}</span>
+                                        <span class="title"><a href='{{ weather.get_absolute_url }}'>{{ weather.city.name }}</a></span>
                                         <br>
                                         <span class="subtitle">{{ weather.temperature }}° F</span>
                                         <br> {{ weather.description }}
                                     </p>
                                 </div>
                             </div>
-                            <form method="DELETE">
-                                    {% csrf_token %}
-                                <button class="button is-info">
-                                    Remove City
-                                </button>
                             </form>
                         </article>
                     </div>
