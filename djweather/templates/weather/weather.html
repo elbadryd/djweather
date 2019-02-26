@@ -1,23 +1,7 @@
 <!-- the_weather/weather/templates/weather/index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>What's the weather like?</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
-</head>
-<body>
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    What's the weather like?
-                </h1>
-            </div>
-        </div>
-    </section>
+{% extends 'base.html' %}
+{% block content %}
+
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -69,7 +53,4 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
-    </footer>
-</body>
-</html>
+{% endblock %}
