@@ -25,13 +25,15 @@ def index(request):
             form.save() # will validate and save if validate
             form = CityForm()
     for city in cities:
+        print(city.id)
         
         city_weather = requests.get(url.format(city=city.name,key=key)).json()
         weather = {
             'city' : city,
             'temperature' : city_weather['main']['temp'],
             'description' : city_weather['weather'][0]['description'],
-            'icon' : city_weather['weather'][0]['icon']
+            'icon' : city_weather['weather'][0]['icon'],
+            'id' : city.id
         }
         weather_data.append(weather)
     context = {
